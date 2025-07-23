@@ -40,7 +40,7 @@ steps:
 
 - task: AzureWebApp@1
   inputs:
-    azureSubscription: '<your-service-connection-name>'
+    azureSubscription: 'a7227ddf-a84b-488c-9757-267492f738eb'
     appType: 'webApp'
     appName: 'webapp-aspnet-pradeep'
     package: '$(System.ArtifactsDirectory)/drop/**/*.zip'
