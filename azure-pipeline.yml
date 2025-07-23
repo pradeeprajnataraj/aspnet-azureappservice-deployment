@@ -28,7 +28,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
-    publishWebProjects: true
+    projects: '**/WebAppAspNet.csproj'
     arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: true
 
@@ -47,7 +47,7 @@ steps:
 
 - task: AzureWebApp@1
   inputs:
-    azureSubscription: 'AzureServiceConnection'  # replace with your exact service connection name if different
+    azureSubscription: 'AzureServiceConnection'
     appType: 'webApp'
     appName: 'webapp-aspnet-pradeep'
     package: '$(System.ArtifactsDirectory)/drop/**/*.zip'
